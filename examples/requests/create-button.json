@@ -1,0 +1,10 @@
+{
+  "operation": "widget.create",
+  "kind": "button",
+  "name": "btnContinue",
+  "text": "继续",
+  "x": 120,
+  "y": 180,
+  "width": 160,
+  "height": 48
+}

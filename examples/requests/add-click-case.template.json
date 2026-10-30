@@ -1,0 +1,13 @@
+{
+  "operation": "interaction.add",
+  "id": "REPLACE_WITH_BUTTON_GUID",
+  "event": "OnClick",
+  "name": "显示欢迎文字",
+  "actions": [
+    {
+      "kind": "setText",
+      "target": "REPLACE_WITH_PARAGRAPH_GUID",
+      "text": "欢迎使用 Axure RP 8"
+    }
+  ]
+}

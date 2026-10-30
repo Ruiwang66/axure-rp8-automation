@@ -1,0 +1,28 @@
+# Axure projects and local output
+*.rp
+*.rp.bak
+*.rp.old
+*.exe
+*.pdb
+*.exe.config
+*.png
+*.jpg
+*.jpeg
+
+# RP8 automation runtime state and request logs
+/live/session.json
+/live/launcher-error.json
+/live/requests/
+/live/projects/
+/live/.runtime/
+/live/latest-*.json
+/live/*-result.json
+/live/*-readback.json
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vs/
+bin/
+obj/
