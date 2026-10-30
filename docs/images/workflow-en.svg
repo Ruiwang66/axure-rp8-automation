@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="730" viewBox="0 0 1280 730" role="img" aria-labelledby="title desc">
+  <title id="title">rp8-automation workflow</title>
+  <desc id="desc">Requirements and page planning flow through JSON orchestration and the RP8 bridge into Axure RP 8 native editing. Save an editable RP file, preview and inspect it, then return issues to orchestration for revision.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#8493a5"/></marker>
+    <marker id="loopArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d97706"/></marker>
+    <style>
+      text { font-family: "Segoe UI", Arial, sans-serif; }
+      .title { fill:#16263d; font-size:28px; font-weight:700; }
+      .sub { fill:#617187; font-size:14px; }
+      .card { fill:#eaf4ff; stroke:#c6d9ee; stroke-width:1.4; }
+      .cardStrong { fill:#e5f1ff; stroke:#9dbfe2; stroke-width:1.7; }
+      .step { fill:#1463a5; font-size:12px; font-weight:700; letter-spacing:.4px; }
+      .label { fill:#173b63; font-size:14px; font-weight:700; }
+      .detail { fill:#526b85; font-size:12px; }
+      .arrow { fill:none; stroke:#8493a5; stroke-width:2; marker-end:url(#arrow); }
+      .loop { fill:none; stroke:#d97706; stroke-width:2; stroke-dasharray:6 5; marker-end:url(#loopArrow); }
+      .loopText { fill:#a85700; font-size:12px; font-weight:700; }
+      .section { fill:#6b7b90; font-size:12px; font-weight:700; letter-spacing:1px; }
+    </style>
+  </defs>
+  <rect width="1280" height="730" rx="18" fill="#fff"/>
+  <text x="48" y="52" class="title">rp8-automation workflow</text>
+  <text x="48" y="78" class="sub">Local JSON commands drive a dedicated Axure RP 8 process; Axure edits and saves its native document model.</text>
+  <text x="48" y="124" class="section">PLAN AND EXECUTE</text>
+  <g>
+    <rect x="48" y="145" width="205" height="128" rx="15" class="card"/>
+    <text x="68" y="172" class="step">01 · INPUT</text><text x="68" y="204" class="label">Requirements &amp; assets</text>
+    <text x="68" y="229" class="detail">Requirements, screenshots,</text><text x="68" y="248" class="detail">or an authorized .rp source</text>
+  </g>
+  <g>
+    <rect x="290" y="145" width="205" height="128" rx="15" class="card"/>
+    <text x="310" y="172" class="step">02 · PLAN</text><text x="310" y="204" class="label">Pages &amp; interactions</text>
+    <text x="310" y="229" class="detail">Page tree, widgets, sizes, states</text><text x="310" y="248" class="detail">Define behaviors and acceptance</text>
+  </g>
+  <g>
+    <rect x="532" y="145" width="205" height="128" rx="15" class="cardStrong"/>
+    <text x="552" y="172" class="step">03 · ORCHESTRATE</text><text x="552" y="204" class="label">Automation orchestration</text>
+    <text x="552" y="229" class="detail">CLI sends local JSON requests</text><text x="552" y="248" class="detail">Read results and revise as needed</text>
+  </g>
+  <g>
+    <rect x="774" y="145" width="205" height="128" rx="15" class="cardStrong"/>
+    <text x="794" y="172" class="step">04 · LOCAL BRIDGE</text><text x="794" y="204" class="label">RP8 bridge layer</text>
+    <text x="794" y="229" class="detail">Request files → WPF Dispatcher</text><text x="794" y="248" class="detail">Build hash gate and native calls</text>
+  </g>
+  <g>
+    <rect x="1016" y="145" width="216" height="128" rx="15" class="card"/>
+    <text x="1036" y="172" class="step">05 · NATIVE EDITOR</text><text x="1036" y="204" class="label">Axure RP 8</text>
+    <text x="1036" y="229" class="detail">Native editor and document model</text><text x="1036" y="248" class="detail">Pages, widgets, interactions</text>
+  </g>
+  <path d="M253 209H282M495 209H524M737 209H766M979 209H1008" class="arrow"/>
+  <text x="48" y="335" class="section">NATIVE WRITES, SAVING &amp; ACCEPTANCE</text>
+  <path d="M1124 273V328" class="arrow"/>
+  <g>
+    <rect x="950" y="345" width="282" height="105" rx="15" class="card"/>
+    <text x="974" y="374" class="step">NATIVE DOCUMENT MODEL</text><text x="974" y="405" class="label">RP8 pages, widgets &amp; interactions</text>
+    <text x="974" y="429" class="detail">Written through RP8 editor services to a copy</text>
+  </g>
+  <path d="M950 398H932V532H916" class="arrow"/>
+  <g>
+    <rect x="650" y="480" width="260" height="105" rx="15" class="card"/>
+    <text x="674" y="509" class="step">SAVE</text><text x="674" y="540" class="label">Save an editable .rp</text>
+    <text x="674" y="564" class="detail">Continue editing in Axure RP 8</text>
+  </g>
+  <path d="M650 532H620" class="arrow"/>
+  <g>
+    <rect x="340" y="480" width="260" height="105" rx="15" class="card"/>
+    <text x="364" y="509" class="step">ACCEPTANCE</text><text x="364" y="540" class="label">Preview &amp; inspect structure</text>
+    <text x="364" y="564" class="detail">Reopen .rp, inspect pages and behaviors</text>
+  </g>
+  <path d="M340 532H296" class="arrow"/><text x="297" y="516" class="detail">Pass</text>
+  <g>
+    <rect x="48" y="480" width="230" height="105" rx="15" class="cardStrong"/>
+    <text x="72" y="509" class="step">DELIVERY</text><text x="72" y="540" class="label">Project &amp; acceptance files</text>
+    <text x="72" y="564" class="detail">.rp project and agreed preview assets</text>
+  </g>
+  <path d="M470 480V315H634V273" class="loop"/>
+  <rect x="468" y="300" width="210" height="25" rx="12" fill="#fff7ed"/>
+  <text x="480" y="317" class="loopText">Issue found: revise orchestration</text>
+  <text x="48" y="646" class="detail">Scope: RP 8.0–8.1; currently verified and hash-pinned build: Axure RP 8.0.0.3400.</text>
+  <text x="48" y="670" class="detail">No mouse, keyboard, or clipboard simulation; Axure performs native saves and HTML previews.</text>
+</svg>
+

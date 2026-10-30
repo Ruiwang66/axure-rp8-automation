@@ -23,6 +23,12 @@
 - 保存或另存为 .rp，撤销/重做受支持的操作，捕获 RP8 原生窗口，并调用 Axure HTML 生成器。
 - 保持 RP8 窗口可见，同时避免将其他应用的前台焦点抢走。
 
+### 工作流总览
+
+下图概括从需求与页面规划，到 RP8 原生编辑、保存和验收的完整路径。可查看[中文详细工作流](docs/WORKFLOW.md)或[English workflow guide](docs/WORKFLOW_EN.md)。
+
+![rp8-automation 工作流图（中文）](docs/images/workflow-zh.svg)
+
 ### 快速开始
 
 1. 准备一份有权使用的 Axure RP 8 Windows 安装。当前实证构建为 **8.0.0.3400**。
@@ -50,6 +56,7 @@ py -3 $Cli '{"operation":"status"}'
 - [架构说明（中文）](docs/ARCHITECTURE.md) · [Architecture (English)](docs/ARCHITECTURE_EN.md)
 - [兼容性与能力范围（中文）](docs/COMPATIBILITY.md) · [Compatibility and feature scope (English)](docs/COMPATIBILITY_EN.md)
 - [安全与隐私（中文）](docs/SECURITY.md) · [Security and privacy (English)](docs/SECURITY_EN.md)
+- [工作流详解（中文）](docs/WORKFLOW.md) · [Workflow guide (English)](docs/WORKFLOW_EN.md)
 - [RP8 设计工作流 Skill（中文）](skills/axure-rp8-design/SKILL_CN.md) · [Skill (English)](skills/axure-rp8-design/SKILL.md)
 
 ### 仓库内容与许可
@@ -57,7 +64,7 @@ py -3 $Cli '{"operation":"status"}'
 ```text
 live/                         RP8 宿主、编辑适配器、启动器、JSON CLI
 examples/requests/            可复制的 JSON 命令示例
-docs/                         中英文教程、架构、兼容性和安全文档
+docs/                         中英文教程、架构、工作流、兼容性和安全文档
 skills/axure-rp8-design/       中英文 Agent 工作流说明
 ```
 
@@ -80,6 +87,12 @@ The adapter runs a dedicated RP8 process and sends local JSON commands to create
 - Add supported Axure native events, conditions, and actions; inspect existing interactions.
 - Save or Save As .rp files, undo/redo supported operations, capture the native RP8 window, and invoke Axure's HTML generator.
 - Keep the RP8 window visible without taking foreground focus from other applications.
+
+### Workflow overview
+
+This diagram summarizes the path from requirements and page planning through native RP8 editing, saving, and acceptance. Read the [English workflow guide](docs/WORKFLOW_EN.md) or [中文详细工作流](docs/WORKFLOW.md).
+
+![rp8-automation workflow diagram (English)](docs/images/workflow-en.svg)
 
 ### Quick start
 
@@ -108,6 +121,7 @@ py -3 $Cli '{"operation":"status"}'
 - [Architecture (English)](docs/ARCHITECTURE_EN.md) · [架构说明（中文）](docs/ARCHITECTURE.md)
 - [Compatibility and feature scope (English)](docs/COMPATIBILITY_EN.md) · [兼容性与能力范围（中文）](docs/COMPATIBILITY.md)
 - [Security and privacy (English)](docs/SECURITY_EN.md) · [安全与隐私（中文）](docs/SECURITY.md)
+- [Workflow guide (English)](docs/WORKFLOW_EN.md) · [工作流详解（中文）](docs/WORKFLOW.md)
 - [RP8 design workflow skill (English)](skills/axure-rp8-design/SKILL.md) · [设计工作流 Skill（中文）](skills/axure-rp8-design/SKILL_CN.md)
 
 ### Repository and license
@@ -115,8 +129,9 @@ py -3 $Cli '{"operation":"status"}'
 ```text
 live/                         RP8 host, editing adapters, launcher, JSON CLI
 examples/requests/            Copyable JSON request examples
-docs/                         Chinese and English tutorials and technical notes
+docs/                         Chinese and English tutorials, workflow diagrams, and technical notes
 skills/axure-rp8-design/       Chinese and English agent workflow guides
 ```
 
 This is an independent community project and is not affiliated with Axure Software Solutions, Inc. The repository does not distribute Axure installers, DLLs, icons, user .rp projects, or compiled binaries. The MIT license applies only to original code in this repository; it does not grant rights to Axure software or its components. See [NOTICE.md](NOTICE.md) and [LICENSE](LICENSE).
+
