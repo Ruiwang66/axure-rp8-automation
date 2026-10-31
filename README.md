@@ -1,9 +1,9 @@
-# Axure RP 8.0–8.1 Live Automation / 实时自动化
+# RP8 AI Automation Workflow / RP8 AI 自动化工作流
 
 **[简体中文](#简体中文) | [English](#english)**
 
-> **Axure RP 8.0–8.1 automation workflow and detailed tutorial**  
-> **Axure RP 8.0–8.1 自动化工作流与详细教程**
+> **Let AI create and edit native Axure RP 8 prototypes through a local JSON bridge, then save editable .rp projects.**  
+> **让 AI 通过本地 JSON 桥接调用 Axure RP 8 原生编辑能力，创建页面、元件和交互，并保存为可继续编辑的 .rp 工程。**
 
 ## 简体中文
 
