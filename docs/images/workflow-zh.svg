@@ -77,7 +77,6 @@
   <path d="M470 480V315H634V273" class="loop"/>
   <rect x="468" y="300" width="172" height="25" rx="12" fill="#fff7ed"/>
   <text x="480" y="317" class="loopText">发现问题：返回编排修正</text>
-  <text x="48" y="646" class="detail">提示：项目目标为 RP 8.0–8.1；当前验证并锁定的构建是 Axure RP 8.0.0.3400。</text>
+  <text x="48" y="646" class="detail">提示：项目目标为 RP 8.0–8.1；仅验证并锁定指定的 Windows build 3400 文件集，版本说明见兼容性文档。</text>
   <text x="48" y="670" class="detail">流程不会模拟鼠标、键盘或剪贴板输入；原生保存和 HTML 预览由 Axure 完成。</text>
 </svg>
-

@@ -5,14 +5,31 @@
 | 项目 | 目标 / 已验证信息 |
 |---|---|
 | 项目目标系列 | Axure RP 8.0–8.1 |
-| 当前已验证构建 | Axure RP 8.0.0.3400 |
+| 当前已验证文件集 | Windows build 3400，以本页 SHA-256 为准 |
+| 官方发布历史名称 | 8.1.0.3400，2022-05-11 |
+| 本机六个文件的 FileVersion / ProductVersion | 8.0.0.3400 |
 | 操作系统 | Windows 桌面版 |
 | 宿主架构 | x86 |
 | UI 技术 | WPF / .NET Framework 4.x |
 | 命令客户端 | Python 3 |
 | RP 文件 | 由已安装 Axure RP 原生读写的 .rp |
 
-**注意：** 8.0–8.1 是项目目标范围；当前适配器仅在 8.0.0.3400 构建上验证，且启动时通过固定 SHA-256 校验绑定到该构建。其他 RP8 构建（包括 8.1）尚未验证，哈希不同即拒绝启动。此处不代表所有 8.0–8.1 构建均可运行。
+**注意：** 8.0–8.1 是项目目标范围；当前适配器只验证了下表中的本机 build 3400 文件集，并在启动时校验固定 SHA-256。其他文件集和构建尚未验证；哈希不同即拒绝启动。此处不代表所有 8.0–8.1 安装均可运行。
+
+### 发布名称与文件版本的区别
+
+[Axure 官方发布历史](https://www.axure.com/release-history/rp8)将 build 3400 标为 **8.1.0.3400（2022-05-11）**。2026-11-03 对下表六个本机文件的只读核查显示：它们的 `FileVersion` 与 `ProductVersion` 均为 **8.0.0.3400**；`Get-AuthenticodeSignature` 对六个文件均返回 `Valid`，签名者为 **Axure Software Solutions, Inc**；SHA-256 均与下表相同。
+
+此前文档把 `8.0.0.3400` 文件版本直接写成官方发布名称，表述不准确。有效签名和哈希记录支持对这组具体文件的识别，不能仅凭版本字段的差异推断它们被改过版本号。此次没有重新下载、提取官方安装包并逐字节比较，因此也不把本机文件集无条件等同于所有标为 `8.1.0.3400` 的分发包。
+
+可以在自己的安装目录复查（将路径替换为实际目录；其余五个文件同样检查）：
+
+```powershell
+$Binary = 'D:\Apps\Axure RP 8\AxureRP8.exe'
+(Get-Item -LiteralPath $Binary).VersionInfo | Select-Object FileVersion, ProductVersion
+Get-AuthenticodeSignature -LiteralPath $Binary | Select-Object Status, SignerCertificate
+Get-FileHash -LiteralPath $Binary -Algorithm SHA256
+```
 
 宿主校验以下 Axure 文件：
 
@@ -51,4 +68,4 @@ widget.style 的白名单包含：fontFamily、fontSize、fontWeight、color、f
 
 ## 已有验证记录
 
-2026-10-24 的本机记录包含 25 项可见窗口、非前台编辑、保存/另存、元件 ID 读回和焦点保护检查；交互闭环还记录了 15 项编辑/持久化检查和 8 项浏览器预览检查。这些结果只代表 8.0.0.3400 和当时的本机样本，不构成其他 RP8 构建或所有操作的保证。
+2026-10-24 的本机记录包含 25 项可见窗口、非前台编辑、保存/另存、元件 ID 读回和焦点保护检查；交互闭环还记录了 15 项编辑/持久化检查和 8 项浏览器预览检查。这些结果只代表上表哈希对应的文件集和当时的本机样本，不构成其他 RP8 文件集或所有操作的保证。2026-11-03 的版本、签名与哈希核查属于文件身份复核，没有重新执行这些功能检查。

@@ -1,11 +1,11 @@
 ---
 name: axure-rp8-design
-description: Work in a dedicated visible Axure RP 8 window through native JSON editing commands, preserving user focus and project copies. Project target is 8.0-8.1; adapter verified only on 8.0.0.3400.
+description: Work in a dedicated visible Axure RP 8 window through native JSON editing commands, preserving user focus and project copies. Project target is 8.0-8.1; only a specific Windows build 3400 binary set is verified and hash-pinned.
 ---
 
 # Axure RP 8 visible design workflow
 
-This skill is for the Windows adapter in this repository. The project targets Axure RP 8.0-8.1, but the current adapter has been verified only against Axure RP 8.0.0.3400 and is hash-pinned to that build. Do not use it with another RP8 build, RP9+, or non-Windows hosts unless separately ported and verified.
+This skill is for the Windows adapter in this repository. The project targets Axure RP 8.0-8.1, but only a specific Windows build 3400 binary set is verified and hash-pinned. The official release label is 8.1.0.3400; the signed local files report FileVersion / ProductVersion 8.0.0.3400. See ../../docs/COMPATIBILITY_EN.md. Do not use another binary set, RP9+, or non-Windows hosts unless separately ported and verified.
 
 ## Safe workflow
 
@@ -23,7 +23,7 @@ This skill is for the Windows adapter in this repository. The project targets Ax
 - The launcher copies the source `.rp` into a session-specific working folder. Edit that copy only.
 - The visible RP8 window is deliberately non-topmost. The adapter does not use mouse/keyboard simulation or clipboard injection.
 - If the dedicated process already exists, the launcher reuses it without activating it or switching its file.
-- The host verifies hashes for the exact Axure 8.0.0.3400 installation. Never bypass a mismatch.
+- The host verifies SHA-256 hashes for the exact build 3400 binary set. A matching release label or file version does not replace matching hashes. Never bypass a mismatch.
 - Do not force-close RP8 with unsaved work. `close` refuses when there are unsaved changes.
 - Runtime requests and results may include user design text. Keep them out of public commits.
 

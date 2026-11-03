@@ -5,14 +5,31 @@
 | Item | Target / verified information |
 |---|---|
 | Project target family | Axure RP 8.0–8.1 |
-| Currently verified build | Axure RP 8.0.0.3400 |
+| Currently verified binary set | Windows build 3400, identified by the SHA-256 hashes below |
+| Official release history label | 8.1.0.3400, May 11, 2022 |
+| FileVersion / ProductVersion of all six local files | 8.0.0.3400 |
 | Operating system | Windows desktop |
 | Host architecture | x86 |
 | UI technology | WPF / .NET Framework 4.x |
 | Command client | Python 3 |
 | RP files | .rp files read and written by the installed Axure RP application |
 
-**Important:** 8.0–8.1 is the project target range. The current adapter has been verified only with build 8.0.0.3400 and is pinned to that build by fixed SHA-256 checks at startup. Other RP8 builds, including 8.1, have not been verified; the adapter refuses to start when a hash differs. This does not mean every 8.0–8.1 build is currently supported.
+**Important:** 8.0–8.1 is the project target range. Only the local build 3400 binary set listed below has been verified, with fixed SHA-256 checks at startup. Other binary sets and builds remain unverified; the adapter refuses to start when a hash differs. This does not mean every 8.0–8.1 installation is supported.
+
+### Release label versus file version
+
+[Axure's official release history](https://www.axure.com/release-history/rp8) labels build 3400 as **8.1.0.3400 (May 11, 2022)**. A read-only inspection of the six local files below on 2026-11-03 found **8.0.0.3400** in both `FileVersion` and `ProductVersion`. `Get-AuthenticodeSignature` returned `Valid` for all six, with **Axure Software Solutions, Inc** as the signer. Their SHA-256 hashes matched the table below.
+
+Earlier documentation incorrectly treated the `8.0.0.3400` file version as the official release name. The valid signatures and hashes identify these specific binaries; the version-field difference alone does not establish that their version resources were modified. This inspection did not download and extract a fresh official installer for a byte-for-byte comparison, so it does not equate the local binary set with every distribution labeled `8.1.0.3400`.
+
+To inspect your installation, replace the path below and repeat for the other five files:
+
+```powershell
+$Binary = 'D:\Apps\Axure RP 8\AxureRP8.exe'
+(Get-Item -LiteralPath $Binary).VersionInfo | Select-Object FileVersion, ProductVersion
+Get-AuthenticodeSignature -LiteralPath $Binary | Select-Object Status, SignerCertificate
+Get-FileHash -LiteralPath $Binary -Algorithm SHA256
+```
 
 The host checks these Axure files:
 
@@ -51,4 +68,4 @@ Not implemented or not verified as general features: dynamic panel state changes
 
 ## Existing verification record
 
-Local records from 2026-10-24 include 25 checks for visible-window behavior, editing without foreground focus, save/Save As, widget ID readback, and focus protection. The interaction workflow also records 15 edit/persistence checks and 8 browser-preview checks. These results apply only to build 8.0.0.3400 and the local samples used at the time; they do not guarantee other RP8 builds or every operation.
+Local records from 2026-10-24 include 25 checks for visible-window behavior, editing without foreground focus, save/Save As, widget ID readback, and focus protection. The interaction workflow also records 15 edit/persistence checks and 8 browser-preview checks. These results apply only to the binary hashes above and the local samples used at the time; they do not guarantee other binary sets or every operation. The version, signature, and hash inspection on 2026-11-03 rechecked file identity; it did not rerun those functional checks.

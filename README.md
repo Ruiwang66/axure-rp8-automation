@@ -9,7 +9,9 @@
 
 ### 项目范围
 
-本项目面向 **Axure RP 8.0–8.1** 系列。当前公开适配器已在 Windows x86 上针对 **Axure RP 8.0.0.3400** 验证，并按该构建的程序与程序集 SHA-256 锁定。其他 8.0 或 8.1 构建尚未逐一验证；哈希不匹配时会拒绝启动。因此，项目目标范围是 8.0–8.1，但当前实证兼容性仅限 8.0.0.3400。
+本项目面向 **Axure RP 8.0–8.1** 系列。当前公开适配器仅在 Windows x86 上针对**指定的 build 3400 文件集**验证，并通过程序与程序集的 SHA-256 锁定；哈希不匹配时会拒绝启动。其他文件集和构建尚未验证。
+
+**版本号说明：** [Axure 官方发布历史](https://www.axure.com/release-history/rp8)将 build 3400 列为 **8.1.0.3400（2022-05-11）**。本机已验证的 EXE 和五个 DLL 的 `FileVersion` / `ProductVersion` 均为 **8.0.0.3400**，且 Windows Authenticode 检查均返回有效的 Axure 签名。此前文档把文件版本直接当成发布名称，表述不准确。两者现分别记录；本项目的兼容性承诺以[文件哈希与核查边界](docs/COMPATIBILITY.md)为准，并未据此验证所有名为 8.1.0.3400 的安装包。
 
 适配器使用独立 RP8 进程和本地 JSON 命令，在 RP8 文档模型中创建或修改可编辑页面、元件和交互。RP8 窗口保持可见；程序不模拟鼠标、键盘或剪贴板输入。原生保存和 HTML 导出由 Axure 完成。
 
@@ -31,7 +33,7 @@
 
 ### 快速开始
 
-1. 准备一份有权使用的 Axure RP 8 Windows 安装。当前实证构建为 **8.0.0.3400**。
+1. 准备一份有权使用的 Axure RP 8 Windows 安装，并核对[已验证 build 3400 文件集的哈希](docs/COMPATIBILITY.md)。
 2. 把本仓库克隆到 Axure 安装目录下的 rp8-automation 文件夹。
 3. 在仓库内运行 live\build.cmd。
 4. 从 Axure 安装目录运行 打开独立RP8.exe，并传入要编辑的 .rp 路径。
@@ -74,7 +76,9 @@ skills/axure-rp8-design/       中英文 Agent 工作流说明
 
 ### Scope and verified compatibility
 
-This project targets the **Axure RP 8.0–8.1** product line. The published adapter has been verified on Windows x86 against **Axure RP 8.0.0.3400** and is SHA-256-pinned to that build's executable and assemblies. Other 8.0 or 8.1 builds have not been verified individually, and the adapter refuses to start when the hashes differ. The project target is 8.0–8.1; the currently verified compatibility is limited to 8.0.0.3400.
+This project targets the **Axure RP 8.0–8.1** product line. The published adapter has been verified on Windows x86 only with a **specific build 3400 binary set**, pinned by SHA-256 hashes of the executable and assemblies. It refuses to start when a hash differs. Other binary sets and builds remain unverified.
+
+**Version naming:** [Axure's official release history](https://www.axure.com/release-history/rp8) lists build 3400 as **8.1.0.3400 (May 11, 2022)**. The verified local EXE and five DLLs all report **8.0.0.3400** in `FileVersion` / `ProductVersion`, and Windows Authenticode reports valid Axure signatures for all six. Earlier documentation incorrectly treated this file version as the release name. These are now recorded separately. Compatibility is defined by the [binary hashes and verification limits](docs/COMPATIBILITY_EN.md), without claiming that every installer labeled 8.1.0.3400 has been tested.
 
 The adapter runs a dedicated RP8 process and sends local JSON commands to create or edit native, editable pages, widgets, and interactions in the RP8 document model. The RP8 window stays visible. The program does not simulate mouse, keyboard, or clipboard input. Axure performs native saves and HTML exports.
 
@@ -96,7 +100,7 @@ This diagram summarizes the path from requirements and page planning through nat
 
 ### Quick start
 
-1. Prepare an authorized Windows installation of Axure RP 8. The currently verified build is **8.0.0.3400**.
+1. Prepare an authorized Windows installation of Axure RP 8 and check the [hashes of the verified build 3400 binary set](docs/COMPATIBILITY_EN.md).
 2. Clone this repository into an rp8-automation directory under the Axure installation root.
 3. Run live\build.cmd from the repository directory.
 4. Launch 打开独立RP8.exe from the Axure installation root and pass the .rp file to edit.
@@ -134,4 +138,3 @@ skills/axure-rp8-design/       Chinese and English agent workflow guides
 ```
 
 This is an independent community project and is not affiliated with Axure Software Solutions, Inc. The repository does not distribute Axure installers, DLLs, icons, user .rp projects, or compiled binaries. The MIT license applies only to original code in this repository; it does not grant rights to Axure software or its components. See [NOTICE.md](NOTICE.md) and [LICENSE](LICENSE).
-

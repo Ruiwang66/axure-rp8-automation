@@ -1,12 +1,12 @@
 # Axure RP 8.0–8.1 Detailed Usage Tutorial
 
-This tutorial targets the Axure RP 8.0–8.1 product line. The current adapter has been verified on Windows with Axure RP 8.0.0.3400 and is hash-pinned to that build. Other 8.0/8.1 builds remain unverified. For your first run, use a disposable test project.
+This tutorial targets the Axure RP 8.0–8.1 product line. The current adapter has been verified only with a specific Windows build 3400 binary set and is pinned to its SHA-256 hashes. Axure's release history labels build 3400 as `8.1.0.3400`, while the signed local files report `8.0.0.3400` in `FileVersion` / `ProductVersion`; see the [compatibility notes](COMPATIBILITY_EN.md) for the distinction and verification limits. Other binary sets remain unverified. For your first run, use a disposable test project.
 
 ## 1. Prerequisites
 
 You need:
 
-- An authorized Axure RP 8 installation. The verified build is 8.0.0.3400.
+- An authorized Axure RP 8 installation whose six program files match the [verified binary hashes](COMPATIBILITY_EN.md).
 - A Windows desktop environment.
 - The .NET Framework 4.x C# compiler included with Windows, at %WINDIR%\Microsoft.NET\Framework\v4.0.30319\csc.exe.
 - Python 3 available through PowerShell as py -3.
@@ -177,7 +177,7 @@ that could not be implemented.
 
 ## 9. Safety and troubleshooting
 
-- **Version check fails:** The adapter targets RP 8.0–8.1 but is currently verified only against build 8.0.0.3400 and accepts only the matching files listed in the compatibility document. Do not remove or bypass the check.
+- **Version check fails:** The adapter targets RP 8.0–8.1 but accepts only the build 3400 binary hashes listed in the compatibility document. A matching release label or file version does not replace a hash match. Do not remove or bypass the check.
 - **RP8 client not ready:** Wait for the dedicated window to finish starting, then send status. Do not send commands to an RP8 instance opened through the normal shortcut.
 - **The launcher did not switch files:** The existing dedicated instance is reused and does not switch documents. Save and safely close that instance before launching with another file.
 - **CLI timeout:** First inspect live\session.json and the corresponding request result. Do not blindly retry a write request that may already have executed.

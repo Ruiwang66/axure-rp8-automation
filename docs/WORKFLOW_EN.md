@@ -82,5 +82,4 @@ When structure, properties, or interactions do not match expectations, describe 
 
 ## 4. Compatibility boundary
 
-The project targets Axure RP 8.0–8.1. The currently verified and hash-pinned build is Axure RP 8.0.0.3400 on Windows x86; other 8.0 or 8.1 builds have not been verified individually. Read [Compatibility and feature scope](COMPATIBILITY_EN.md) and the [detailed tutorial](TUTORIAL_EN.md), and use an Axure installation you are authorized to run.
-
+The project targets Axure RP 8.0–8.1. Only a specific Windows x86 build 3400 binary set is verified and SHA-256-pinned; other binary sets and builds remain unverified. The official release label is 8.1.0.3400, while the signed local files report file version 8.0.0.3400. See [Compatibility and feature scope](COMPATIBILITY_EN.md) for the distinction and verification limits. Read the [detailed tutorial](TUTORIAL_EN.md) and use an Axure installation you are authorized to run.

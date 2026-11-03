@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 
-// Adapter for the hash-bound RP8 8.0.0.3400 native interaction tree.
+// Adapter for the hash-bound RP8 build 3400 binary set (file version 8.0.0.3400).
 internal static class RP8Interactions {
     const BindingFlags Any=BindingFlags.Public|BindingFlags.NonPublic|BindingFlags.Instance;
     static Assembly Model {get{return AppDomain.CurrentDomain.GetAssemblies().Single(a=>a.GetName().Name=="Model");}}
